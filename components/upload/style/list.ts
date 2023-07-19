@@ -29,7 +29,6 @@ const genListStyle: GenerateStyle<UploadToken> = (token) => {
           },
 
           [`${itemCls}-name`]: {
-            ...textEllipsis,
             padding: `0 ${token.paddingXS}px`,
             lineHeight,
             flex: 'auto',
