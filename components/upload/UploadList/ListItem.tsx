@@ -7,6 +7,7 @@ import * as React from 'react';
 import { ConfigContext } from '../../config-provider';
 import Progress from '../../progress';
 import Tooltip from '../../tooltip';
+import Typography from '../../typograph';
 import type {
   ItemRender,
   UploadFile,
@@ -14,6 +15,8 @@ import type {
   UploadListType,
   UploadLocale,
 } from '../interface';
+
+const { Text } = Typography;
 
 export interface ListItemProps {
   prefixCls: string;
@@ -181,7 +184,7 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
             href={file.url}
             onClick={(e) => onPreview(file, e)}
           >
-            {file.name}
+            <Text ellipsis={true}>{file.name}</Text>
           </a>,
           downloadOrDelete,
         ]
@@ -192,7 +195,7 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
             onClick={(e) => onPreview(file, e)}
             title={file.name}
           >
-            {file.name}
+            <Text ellipsis={true}>{file.name}</Text>
           </span>,
           downloadOrDelete,
         ];
